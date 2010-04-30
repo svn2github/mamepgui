@@ -1,0 +1,259 @@
+﻿after a year and 3 months of development, I consider this program is compatible with most of the features of MAMEUI, so that a final version is released. and as promised, it's now open-source. no license or whatever, it's free for any purpose. the building process is the same as any Qt program.
+
+经过1年3个月的开发，新GUI已经可以兼容MAMEUI的大部分功能，因此决定发布正式版。同时依照之前承诺的，这个项目现在开源。源代码无任何授权，想怎么用都可以。编译方法同Qt其他标准程序。
+
+//Web
+gquery enhanced
+put latest download on first page
+render xml feed
+multi lang basic UI
+read/write cookie
+documentation
+theme
+
+//Done
+
+preliminary code for full dat export
+
+//////////////////////////
+//auto update
+all misc stuffs in dir as a single pack, ctrlr, docs, etc
+
+exes: mamep, mamepgui, mess, mameui, exttools(multi)
+exts: jp,ita history, jp mameinfo, sysinfo, jp/en command, lang(multi), snap(multi)
+
+///////////////////
+//Priority tasks
+4 crash after refresh nes and run game
+4 crash after refresh when nes is removed and then readded then refresh
+4 新GUI无视CRC，只要有名称相同的文件，就会应用对应的IPS 如果有对的CRC，文件名不对，则出错。
+4 multi profile
+3 ini\horizont.ini     ini\vertical.ini   vector
+3 硬件信息
+3 在gui中设置cheat文件仍然只能设置为文件夹，而不能指定zip文件吧
+
+3 jpg snaps
+3 残档目录,并不一定要有zip，因为clone可以merge进主rom的,我每次更新，就有几十个rom废掉，然后只能开2个实例慢慢比对……
+3 coin/time counter column
+3 better create folder
+3 LIN下的GUI能不能想办法支持汉化列表, command.dat... default command.dat path in lang, customizable *.dat location for official mame
+3 color chooser
+3 font chooser
+2 test with some illegal paths: /history.dat, ///
+2 other language mamep core
+2 audit output only incorrect, sample
+1 crash when exit and auditing
+2 ips lang may cause crash
+2 new large icon effect
+2 sysinfo_file, messinfo_file
+2 background trans color on switching
+1 find a way to pick MESS systems from drivers
+1 added API to know which dock widgets are tabified together with a dock widget
+1 global softwarepath, multi software dirs
+2 translator credit
+1 custom filters The game/ROM set count doesn't change though until you've clicked on an alternate folder listing.
+2 multi sw paths
+1 MESS sw ext rom cfg saving
+1 playwith state name prompt, empty file name handling
+
+//Linux/Mac
+当使用linux版本的时候，rom和artworks等文件夹放在ntfs分区时，会在其目录下建立.mamepgui文件夹
+
+//Coding
+
+//General
+* test oldest mame version support, warning
+* move datafile.c statistics to GUI
+1 Add an option to revert the geometry to default, I lost a couple of my snap/info
+1 F11 fullscreen mode, vista style
+1 support relative path
+
+//Options
+1 check default bios since .129
+* support mamep 127 paths
+* add a menu to auto mkdir
+* unify get GUI opts default
+* keycode ctrlr config editor
+* customizable GUI text font / color editor +0.05
+* option helper from -su
+* unify method to get inherited default value
+* general info page
+
+//GameList
+* icon for local lang switching
+* not working的红色不显示在游戏全名了，只显示在romset名了
+* separate game list language
+* manuals support planned? (http://www.mamext.net/)
+* export lst gamelist
+* sort by reading
+* add/remove items from game list model
+* ROM capa column
+
+//Audit
+* clrmame style dialog
+
+//Folder
+* ext folder translation
+* bios icons
+* dnd support
+
+//Snap
+* 点击没有缩略图的纵版游戏，缩略图mame那几个字就变成拉伸变长的了
+1 icons\warning.ico for the non-working games.
+1 snap\nonworking.png for non-working games snap display
+* external default.png.0
+* horz/vert .lay loading
+* avi/mng playback
+* mameinfo of driver
+
+//M1/IPS
+1 ips dialog size
+* 检查当前IPS DAT里文件，是否与当前的ROM名字对否，CRC对否。。。。- -一个个试真的太累了
+* check m1 hardware capa
+* ips dir must restart
+* ips v1 dat fallback with datfile name
+* multi directory
+
+//MESS
+1 ramoptions
+1 nv? 若是連副檔名都可以不用變更的話就更棒了
+chinese zip console name error
+* if we are in an empty MESS system folder, assign currentGame to the system
+* console folder icon
+* console game info from GameFAQs?
+* search wildcard console gamename
+  use mess hsi(goodxxx)
+  use xmdb directly? (name based)
+  add manufacturer from offline dat (name based, one time, submit to MESS)
+  snapshot snap/snes/parent game name (without tags)
+  display region/hack info of console rom
+
+//Extra
+* reconsider command.dat it's slow and buggy
+GUI Support for chdman (and possibly the LD Player)
+* controller setting interface
+* export snapshot dat
+* export roms to folders
+* delete roms,cfg,nvram...
+* delete snapshot
+* gamelist editor
+
+----------------------------------------
+
+[qt compile config]
+windows:
+4.5
+configure -release -static -no-exceptions -no-accessibility -no-stl -no-phonon -no-webkit -no-scripttools -no-3dnow -no-sse -no-sse2 -no-openssl -no-rtti -qt-style-windowsvista -qt-style-plastique -qt-style-cleanlooks -no-style-motif -no-style-cde -nomake examples -nomake demos
+4.6
+configure -release -static -no-exceptions -no-accessibility -no-stl -no-phonon -no-multimedia -no-webkit -no-script -no-scripttools -no-3dnow -no-sse -no-sse2 -no-openssl -no-rtti -qt-style-windowsvista -qt-style-plastique -qt-style-cleanlooks -no-style-motif -no-style-cde -nomake examples -nomake demos
+linux:
+libqt4-dev
+libgtk2.0-dev
+configure -opensource -release -static -no-exceptions -no-accessibility -no-stl -no-phonon -no-svg -no-webkit -no-javascript-jit -no-script -no-scripttools -no-3dnow -no-sse -no-sse2 -no-openssl -no-opengl -sm -xinerama -xcursor -xfixes -xrandr -xrender -fontconfig -gtkstyle -nomake examples -nomake demos -nomake tools
+macosx:
+configure -opensource -release -static -universal -no-exceptions -no-accessibility -no-stl -no-phonon -no-multimedia -no-svg -no-webkit -no-javascript-jit -no-script -no-scripttools -no-3dnow -no-sse -no-sse2 -no-openssl  -no-dwarf2 -nomake examples -nomake demos -nomake tools
+
+cd /mnt/hgfs/qtui
+
+linux/mac:
+export PATH=/usr/local/Trolltech/Qt-4.5.2/bin:$PATH
+export PATH=/usr/local/Trolltech/Qt-4.6.1/bin:$PATH
+
+sudo cp -f mamepgui /usr/games
+sudo chmod +x /usr/games/mamepgui
+
+/Developer/Tools/Qt/macdeployqt mamepgui.app
+
+[mamepgui test]
+in an empty folder
+1 dock snap
+w/ or w/o m1
+check sorting, with local
+mame, mamep, mess in same folder
+gui/core options saving
+bios, ctrlr, effect, screen
+path w/ space and Unicode
+gamelist init #1: upgrading xml (sig err) G
+gamelist init #2: restore a console folder and/or game that is removed G
+gamelist init #3: keep audit result (newer ver) G
+gamelist init #4: driver config switch (newer ver) G
+
+[mamep core test]
+ips should not inherit
+// mamep: dont save settings during playback
+// dont save nvram during playback
+load nvram from playback dir
+neogeo playback rtc
+
+[mamep core bug]
+mame能否加上 显示游戏当前运算的分辨率？
+1 submit joyid
+4 verify rev 3991
+3x filter height
+verify MESS defs
+wofch
+remove nvram hack
+mamep snaps
+hazemd icons
+verify spclone dips
+add makelang text, src repo link on main page
+
+[mamep tools]
+translation
+multi fixdat
+multi paths for a ftp
+toggle pw mask
+purge cache if error on extracting
+purge cache if cache larger than rom
+
+[gamelist init rewrite]
+todo: 
+-check mameGame_copy
+
+0: only called once
+3: multiple times
+
+/* init mameGame */
+[0]des11n()
+or
+[3]-listxml proc
+    >parseListXml()
+    >loadDefaultIni() proc
+      >gameList->init()
+
+disableCtrls()
+*disconn all
+
+init gameListModel, gameListPModel
+
+[0]initFolders (*need separate method to update visibility)
+
+1: init options from default mame.ini
+optUtils->loadDefault(mameGame->mameDefaultIni);
+2: load mame.ini overrides
+optUtils->loadIni(OPTLEVEL_GLOBAL, (isMESS ? "mess" INI_EXT : "mame" INI_EXT));
+3: load GUI path overrides
+
+[0]setVersion()
+
+[3]loadMMO()
+
+filterFolderChanged()
+
+restore column state
+
+[0]initMenus()
+
+*connect all, updateSelection()
+enableCtrls()
+
+[0]loadIcon() in thread
+
+restoreGameSelection()
+
+
+*** switch to manu/bios folder slow
+*** restoreGameSelection() is slow
+
+
+./configure --disable-atomic --disable-audio --disable-events --disable-haptic --disable-power --disable-threads --disable-timers --disable-file --disable-loadso --disable-cpuinfo --disable-mmx --disable-3dnow --disable-sse

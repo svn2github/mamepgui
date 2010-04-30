@@ -1,0 +1,127 @@
+<RCC>
+    <qresource prefix="/" >
+	<file>lang/mamepgui_zh_CN.qm</file>
+	<file>lang/mamepgui_zh_TW.qm</file>
+	<file>lang/mamepgui_ja_JP.qm</file>
+	<file>lang/mamepgui_es_ES.qm</file>
+	<file>lang/mamepgui_fr_FR.qm</file>
+	<file>lang/mamepgui_hu_HU.qm</file>
+	<file>lang/mamepgui_ko_KR.qm</file>
+	<file>lang/mamepgui_pt_BR.qm</file>
+	<file>lang/mamepgui_ru_RU.qm</file>
+
+	<file>res/32x32/applications-system.png</file>
+	<file>res/32x32/audio-x-generic.png</file>
+	<file>res/32x32/folder.png</file>
+	<file>res/32x32/input-gaming.png</file>
+	<file>res/32x32/video-display.png</file>
+	<file>res/32x32/video-display-blue.png</file>
+	<file>res/32x32/video-osd.png</file>
+	<file>res/32x32/video-vector.png</file>
+
+	<file>res/16x16/view-refresh.png</file>
+	<file>res/16x16/help-browser.png</file>
+	<file>res/16x16/system-settings.png</file>
+	<file>res/16x16/cocktail_good.png</file>
+	<file>res/16x16/cocktail_preliminary.png</file>
+	<file>res/16x16/cocktail_imperfect.png</file>
+	<file>res/16x16/color_good.png</file>
+	<file>res/16x16/color_preliminary.png</file>
+	<file>res/16x16/color_imperfect.png</file>
+	<file>res/16x16/emulation_good.png</file>
+	<file>res/16x16/emulation_preliminary.png</file>
+	<file>res/16x16/emulation_imperfect.png</file>
+	<file>res/16x16/graphic_good.png</file>
+	<file>res/16x16/graphic_preliminary.png</file>
+	<file>res/16x16/graphic_imperfect.png</file>
+	<file>res/16x16/protection_good.png</file>
+	<file>res/16x16/protection_preliminary.png</file>
+	<file>res/16x16/protection_imperfect.png</file>
+	<file>res/16x16/savestate_supported.png</file>
+	<file>res/16x16/savestate_unsupported.png</file>
+	<file>res/16x16/sound_good.png</file>
+	<file>res/16x16/sound_preliminary.png</file>
+	<file>res/16x16/sound_imperfect.png</file>
+	<file>res/16x16/status_good.png</file>
+	<file>res/16x16/status_preliminary.png</file>
+	<file>res/16x16/status_imperfect.png</file>
+	<file>res/16x16/system-search.png</file>
+	<file>res/16x16/status_cross.png</file>
+	<file>res/16x16/blank.png</file>
+	<file>res/16x16/mamep.png</file>
+
+	<file>res/16x16/btn-+.png</file>
+	<file>res/16x16/btn-A.png</file>
+	<file>res/16x16/btn-B.png</file>
+	<file>res/16x16/btn-C.png</file>
+	<file>res/16x16/btn-D.png</file>
+	<file>res/16x16/btn-G.png</file>
+	<file>res/16x16/btn-K.png</file>
+	<file>res/16x16/btn-N.png</file>
+	<file>res/16x16/btn-na.png</file>
+	<file>res/16x16/btn-nb.png</file>
+	<file>res/16x16/btn-nc.png</file>
+	<file>res/16x16/btn-nd.png</file>
+	<file>res/16x16/btn-ne.png</file>
+	<file>res/16x16/btn-nf.png</file>
+	<file>res/16x16/btn-P.png</file>
+	<file>res/16x16/btn-S.png</file>
+	<file>res/16x16/dir-1.png</file>
+	<file>res/16x16/dir-2.png</file>
+	<file>res/16x16/dir-3.png</file>
+	<file>res/16x16/dir-4.png</file>
+	<file>res/16x16/dir-5.png</file>
+	<file>res/16x16/dir-6.png</file>
+	<file>res/16x16/dir-7.png</file>
+	<file>res/16x16/dir-8.png</file>
+	<file>res/16x16/dir-9.png</file>
+	<file>res/16x16/dir-hcb.png</file>
+	<file>res/16x16/dir-hcf.png</file>
+	<file>res/16x16/dir-qdb.png</file>
+	<file>res/16x16/dir-qdf.png</file>
+	<file>res/16x16/star_gold.png</file>
+	<file>res/16x16/star_silver.png</file>
+	<file>res/16x16/tri-r.png</file>
+	<file>res/16x16/cir-g.png</file>
+	<file>res/16x16/cir-r.png</file>
+	<file>res/16x16/cir-y.png</file>
+	<file>res/16x16/arrow-r.png</file>
+	<file>res/16x16/sqr-g.png</file>
+	<file>res/16x16/sqr-r.png</file>
+	<file>res/16x16/sqr-y.png</file>
+
+	<file>res/16x16/media-playback-pause.png</file>
+	<file>res/16x16/media-playback-start.png</file>
+	<file>res/16x16/media-playback-stop.png</file>
+	<file>res/16x16/media-record.png</file>
+	<file>res/16x16/media-skip-backward.png</file>
+	<file>res/16x16/media-skip-forward.png</file>
+
+	<file>res/16x16/media-floppy.png</file>
+	<file>res/16x16/drive-harddisk.png</file>
+	<file>res/16x16/printer.png</file>
+	<file>res/16x16/media-optical.png</file>
+
+	<file>res/mame32-show-snap.png</file>
+	<file>res/mame32-show-tree.png</file>
+	<file>res/mame32-view-detail.png</file>
+	<file>res/mame32-view-group.png</file>
+	<file>res/mame32-view-licon.png</file>
+	<file>res/mame32-view-list.png</file>
+	<file>res/mame32-view-sicon.png</file>
+	<file>res/mame32-view-the.png</file>
+
+	<file>res/mamegui/mame.png</file>
+	<file>res/mamegui/mess.png</file>
+	<file>res/mamegui/mamep_brush.png</file>
+	<file>res/mamegui/deco-brightbg.png</file>
+	<file>res/mamegui/deco-darkbg.png</file>
+
+	<file>res/optiontemplate.xml</file>
+	<file>res/reset_property.png</file>
+	<file>res/status-na.png</file>
+
+	<file>res/mamep_256.png</file>
+	<file>res/mamepgui.ini</file>
+    </qresource>
+</RCC>
