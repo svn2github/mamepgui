@@ -271,6 +271,7 @@
 		<value os="win" guivalue="GDI">gdi</value>
 		<value os="win" guivalue="DirectDraw">ddraw</value>
 		<value os="win" guivalue="Direct3D">d3d</value>
+		<value os="win" guivalue="BGFX">bgfx</value>
 		<value os="sdl" guivalue="OpenGL">opengl</value>
 		<value os="sdl">opengl16</value>
 		<value os="sdl">soft</value>
