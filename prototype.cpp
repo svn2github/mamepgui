@@ -987,7 +987,7 @@ void MameDat::loadListXmlReadyReadStandardOutput()
 	buf.replace("\n", "");
 	buf.replace("\t", "");
 
-	numTotalGames += buf.count("<game name=");
+	numTotalGames += buf.count("<machine name=");
 	mameOutputBuf += buf.toUtf8();
 
 	win->logStatus(QString(tr("Loading listxml: %1 games")).arg(numTotalGames));

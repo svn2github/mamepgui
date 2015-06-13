@@ -13,6 +13,9 @@ take Genesis for example:
 1. 设置rom路径: "选项 - 目录 - MESS 路径 - Genesis extra software"
 2. 在 "家用机 - genesis" 目录按F5
 
+1.8.0
+updated for mame 0.162
+
 1.7.0
 updated for mame 0.159
 fixed problem in 64bit Chinese game system name [szxyz]
