@@ -193,16 +193,17 @@ void UpdateSelectionThread::run()
 		int type;
 		QString title;
 		QString *buffer;
+		bool isVisible;
 	};
 
-	static const DockInfo _dockInfoList[] =
+	DockInfo _dockInfoList[] =
 	{
-		{ "history_file",	"history.dat",	DOCK_HISTORY,	"History",		&historyText },
-		{ "mameinfo_file",	"mameinfo.dat", DOCK_MAMEINFO,	"MAMEInfo",		&mameinfoText },
-		{ "mameinfo_file",	"mameinfo.dat", DOCK_DRIVERINFO,"DriverInfo",	&driverinfoText },
-		{ "story_file", 	"story.dat",	DOCK_STORY, 	"Story",		&storyText },
-		{ "command_file",	"command.dat",	DOCK_COMMAND,	"Command",		&commandText },
-		{ NULL,				NULL,			0,				NULL,			NULL }
+		{ "history_file",  "history.dat",  DOCK_HISTORY,    "History",    &historyText,    win->tbHistory->isVisible() },
+		{ "mameinfo_file", "mameinfo.dat", DOCK_MAMEINFO,   "MAMEInfo",   &mameinfoText,   win->tbMameinfo->isVisible() },
+		{ "mameinfo_file", "mameinfo.dat", DOCK_DRIVERINFO, "DriverInfo", &driverinfoText, win->tbDriverinfo->isVisible() },
+		{ "story_file",    "story.dat",    DOCK_STORY,      "Story",      &storyText,      win->tbStory->isVisible() },
+		{ "command_file",  "command.dat",  DOCK_COMMAND,    "Command",    &commandText,    win->tbCommand->isVisible() },
+		{ NULL,            NULL,           0,               NULL,         NULL,            false }
 	};
 
 	//save a local copy
@@ -238,8 +239,9 @@ void UpdateSelectionThread::run()
 				abort = true;
 				break;
 			}
-
-			if (!abort && win->tbHistory->isVisible() && win->isDockTabVisible(dockInfoList->title))
+			
+			// if (!abort && win->tbHistory->isVisible() && win->isDockTabVisible(dockInfoList->title))
+			if (!abort && dockInfoList->isVisible && win->isDockTabVisible(dockInfoList->title))
 			{
 				if (hasLanguage)
 					localPath = utils->getPath(mameOpts["langpath"]->globalvalue);
@@ -1020,6 +1022,7 @@ void GameListDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
 
 	//load original icon
 	QByteArray icondata;
+	QPixmap pmFinal, pmIcon;
 
 	if (gameInfo->icondata.isNull())
 	{
@@ -1029,13 +1032,18 @@ void GameListDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
 			icondata = defIconDataYellow;
 		else
 			icondata = defIconDataRed;
+
+		if (!pmIcon.loadFromData(icondata))
+			win->updateLog("icon error 2: cannot load");
 	}
 	else
+	{
 		icondata = gameInfo->icondata;
+		if (!pmIcon.loadFromData(icondata, "ico"))
+			win->updateLog("icon error 3: cannot load");
+	}
 
-	QPixmap pmFinal, pmIcon;
 
-	pmIcon.loadFromData(icondata);
 	const bool isLargeIcon = pmIcon.width() > 16;
 	const bool isZooming = win->actionRowDelegate->isChecked();
 
