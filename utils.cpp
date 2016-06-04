@@ -220,7 +220,10 @@ void Utils::getMameVersionFinished(int, QProcess::ExitStatus)
 	QProcess *proc = (QProcess *)sender();
 	procMan->procMap.remove(proc);
 
-	mameVersion.replace(QRegExp(".*(\\d+\\.[^ ]+\\s+\\([\\w\\s]+\\)).*"), "\\1");
+	//1.M.A.M.E. v0.168 (Mar 15 2016)
+	//2.nightly build: MAME v0.172 (699-g5d1ce79)
+	//3.release: MAME v0.173
+	mameVersion.replace(QRegExp(".*[Mm]\\.?[Aa]\\.?[Mm]\\.?[Ee]\\.?[\\s\\t]+[Vv]([^\\)\\r\\n]+\\)?).*"), "\\1");
 //	0.124u4a (Apr 24 2008)
 	win->log(QString("mamever: %1").arg(mameVersion));
 }
